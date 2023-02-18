@@ -1,12 +1,16 @@
 @font-face {
   font-family: minhaFonte;
+  src: url("../arquives/font/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: minhaFonte2;
   src: url("../arquives/font/Poppins/Poppins-Light.ttf");
 }
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: minhaFonte;
+  font-family: minhaFonte2;
   transition: 0.3s ease-in-out;
 }
 
@@ -22,6 +26,10 @@ body {
 a {
   text-decoration: none;
   color: gray;
+}
+
+:is(h1, h2) {
+  font-family: minhaFonte;
 }
 
 button {
@@ -149,11 +157,12 @@ header a:hover, .lading-content a:hover {
     position: absolute;
     width: 150px;
     height: 150px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    align-content: center;
     top: 33px;
     right: 15%;
     z-index: 4;
+    padding-left: 2%;
     background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
     backdrop-filter: blur(20px);
@@ -339,7 +348,7 @@ header a:hover, .lading-content a:hover {
   margin: 0 auto;
 }
 
-.get-side-left {
+.get-side-left, .about-side-rigth {
   min-width: 300px;
   margin: 4% auto;
   min-height: 380px;
@@ -355,7 +364,7 @@ header a:hover, .lading-content a:hover {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.get-side-left a {
+.get-side-left a, .about-side-rigth a {
   width: 80%;
   margin: 3% auto;
   height: 50px;
@@ -365,8 +374,135 @@ header a:hover, .lading-content a:hover {
   justify-content: center;
   background-color: white;
   color: gray;
+  transition: 2s ease-in-out;
+  animation-name: rodar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
-.get-side-left a:hover {
+.get-side-left a:hover, .about-side-rigth a:hover {
   background-color: gray;
   color: wheat;
+}
+@keyframes rodar {
+  from {
+    transform: rotate(2deg);
+    transform: scale(1);
+  }
+  50% {
+    transform: rotate(-4deg);
+    transform: scale(1.1);
+  }
+  100% {
+    transform: rotate(4deg);
+    transform: scale(1);
+  }
+}
+
+.about-side-left {
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+.about-side-left img {
+  width: 90%;
+  padding-bottom: 4px;
+}
+
+@media (max-width: 800px) {
+  .about-side-rigth {
+    padding: 3% 0%;
+  }
+}
+
+section form {
+  width: 80%;
+  height: 100%;
+  margin: 3% auto;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+  border-radius: 12px;
+}
+
+section form label {
+  margin: 2% 0%;
+  overflow: hidden;
+}
+
+section form :is(input, textarea) {
+  width: 100%;
+  max-width: 800px;
+  padding: 1% 3%;
+  border: 1px solid rgba(128, 128, 128, 0.433);
+  border-radius: 6px;
+}
+
+section form button[type=submit] {
+  width: 60%;
+  height: 35px;
+  margin: 3% auto;
+  background-color: wheat;
+  border-radius: 6px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
+  cursor: pointer;
+}
+section form button[type=submit]:hover {
+  background-color: rgba(128, 128, 128, 0.433);
+}
+
+footer {
+  border-top: 1px solid rgba(128, 128, 128, 0.433);
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+footer div {
+  text-align: center;
+  width: 50%;
+  padding: 3% 0%;
+}
+@media (max-width: 800px) {
+  footer div {
+    width: 100%;
+  }
+}
+
+.top-call-area {
+  width: 60%;
+  height: 100%;
+  margin: 3% auto;
+  display: flex;
+  justify-content: right;
+}
+
+.top-call-area button {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(128, 128, 128, 0.433);
+  transition: 0.5s ease-out;
+}
+.top-call-area button:hover {
+  background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+}
+
+.top-call-area button svg {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  display: grid;
+  align-content: center;
 }/*# sourceMappingURL=styles.css.map */

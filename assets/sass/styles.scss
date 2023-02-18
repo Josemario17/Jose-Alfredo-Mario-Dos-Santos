@@ -32,14 +32,21 @@ $gradient: linear-gradient(90deg, white 0%, #dddded 50%, $color 100%);
 //fonts de texto
 @font-face {
     font-family: minhaFonte;
-    src: url('../arquives/font/Poppins/Poppins-Light.ttf');
+    src: url('../arquives/font/Poppins/Poppins-Regular.ttf');
   }
 
+@font-face {
+    font-family: minhaFonte2;
+    src: url("../arquives/font/Poppins/Poppins-Light.ttf");
+}
+
+  
+//general styles
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: minhaFonte;
+    font-family: minhaFonte2;
     transition: .3s ease-in-out;
 }
 
@@ -58,6 +65,12 @@ a{
     text-decoration: none;
     color: $text-color;
 }
+
+
+:is(h1, h2){
+    font-family: minhaFonte;
+}
+
 
 button{
     border: 0;
@@ -186,11 +199,12 @@ header nav{
     position: absolute;
     width: 150px;
     height: 150px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    align-content: center;
     top: 33px;
     right: 15%;
     z-index: 4;
+    padding-left: 2%;
     @include glassmorfism();
 }
 }
@@ -396,10 +410,142 @@ header nav{
         justify-content: center;
         background-color:white;
         color: $text-color;
+        transition: 2s ease-in-out;
+        animation-name: rodar;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
 
         &:hover{
             background-color: $text-color;
             color: $color;
         }
+
+        @keyframes rodar {
+            
+            from{
+                transform: rotate(2deg);
+                transform: scale(1);
+            }
+
+            50%{
+                transform: rotate(-4deg);
+                transform: scale(1.1);
+            }
+
+            100%{
+                transform: rotate(4deg);
+                transform: scale(1);
+            }
+        }
     }
+}
+
+.about-side-left{
+    height: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    img{
+        width:90%;
+        padding-bottom: 4px;
+    }
+}
+.about-side-rigth{
+    @extend .get-side-left;
+    @media (max-width: 800px) {
+       padding: 3% 0%;
+    }
+}
+
+section form{
+    width: 80%;
+    height: 100%;
+    margin: 3% auto;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    background-image: $gradient;
+    border-radius: 12px;
+}
+
+section form label{
+    margin: 2% 0%;
+    overflow: hidden;
+}
+
+section form :is(input, textarea){
+    width: 100%;
+    max-width: 800px;
+    padding: 1% 3%;
+    border: 1px solid $color2;
+    border-radius: 6px;
+}
+
+section form button[type="submit"]{
+    width: 60%;
+    height: 35px;
+    margin: 3% auto;
+    background-color: $color;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    cursor: pointer;
+
+    &:hover{
+        background-color: $color2;
+    }
+}
+
+footer{
+    border-top: 1px solid $color2;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width: 800px) {
+       flex-direction: column;
+       justify-content: center;
+   }
+}
+
+footer div{
+    text-align: center;
+    width: 50%;
+    padding: 3% 0%;
+    @media (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+//extra styles
+.top-call-area{
+    width: 60%;
+    height: 100%;
+    margin: 3% auto;
+    display: flex;
+    justify-content: right;
+}
+
+.top-call-area button{
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: $color2;
+    transition: .5s ease-out;
+
+    &:hover{
+        background-image: $gradient;
+    }
+
+}
+
+.top-call-area button svg{
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+        display: grid;
+        align-content: center;
 }
