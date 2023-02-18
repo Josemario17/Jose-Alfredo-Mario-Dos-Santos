@@ -1,0 +1,405 @@
+$color: wheat;
+$color2: rgba(128, 128, 128, 0.433);
+$text-color: gray;
+$shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
+$gradient: linear-gradient(90deg, white 0%, #dddded 50%, $color 100%);
+
+
+@mixin glassmorfism{
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@mixin glassmorfismContraste{
+    background: $color;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@mixin mainMixin{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+//fonts de texto
+@font-face {
+    font-family: minhaFonte;
+    src: url('../arquives/font/Poppins/Poppins-Light.ttf');
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: minhaFonte;
+    transition: .3s ease-in-out;
+}
+
+body{
+    width: 100vw;
+    max-width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 3% 2% 1% 2%;
+    background-image: $gradient;
+}
+
+
+//estilos inicias - geral
+a{
+    text-decoration: none;
+    color: $text-color;
+}
+
+button{
+    border: 0;
+    background-color: transparent;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+//estilos da navegação
+header{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+header :is(nav, div){
+    width: 30%;
+    height: 100%;
+}
+
+header a{
+    padding: 0% 2.5%;
+    
+    &:hover{
+        color: $color2;
+    }
+}
+
+//especificações para area abaixo da nav-bar
+.lading-content{
+    @extend header;
+    padding: 2% 2%;
+    margin: 5% auto;
+    @media (max-width: 800px) {
+        width: 100%;
+        gap: 10%;
+        flex-direction: column;   
+   }
+}
+
+.lading-content .lading{
+    width: 40%;
+    height: 100%;
+    @media (max-width: 800px) {
+        width: 100%;
+        gap: 10%;
+        flex-direction: column;
+   }
+}
+
+.lading-content .lading:nth-child(1) *{
+    margin: 2% auto;
+}
+
+.slide-text p span{
+    width: 100%;
+    display: inline;
+    padding: 0% 2%;
+    background-color: $color;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.slide-text h1{
+    font-size: 3rem;
+}
+
+.slide-text p:nth-of-type(2){
+    font-size: x-large;
+}
+
+.slide-text .list-links{
+    width: 100%;
+    height: 100%;
+
+    .imagen-icon{
+        width: 50px;
+        box-shadow: $shadow;
+    }
+}
+
+.side-image{
+    display: flex;
+    align-content: flex-end;
+}
+.side-image *{
+    width: 65%;
+    margin: 0 auto;
+}
+
+//Especificações para toggle-collapse
+.toggle-collapse{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: none;
+
+    &:hover{
+        transform: scale(1.2);
+    }
+
+    @media (max-width: 800px) {
+        display: inline;
+   }
+}
+
+header nav{
+    @media (max-width: 800px) {
+        display: none;
+   }
+}
+
+#t-check:checked ~ label{
+    transform: rotate(180deg);
+}
+        
+#t-check:checked ~ nav{
+  @media (max-width: 800px) {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    top: 33px;
+    right: 15%;
+    z-index: 4;
+    @include glassmorfism();
+}
+}
+
+//area main
+.container{
+    margin: 5% auto;
+    padding: 2%;
+}
+
+.container section{
+    @include mainMixin();
+    margin-top: 5%;
+}
+
+.container section :is(h2, p){
+    @include mainMixin();
+    text-align: center;
+}
+
+.area-to-skills{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.area-to-skills .card-md{
+    width: 30%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.area-to-skills .card-md img{
+    width: 80%;
+}
+
+.area-to-skills .card-md .area-description{
+    width: 70%;
+    margin: 0 auto;
+    @extend .card-md;
+
+    .area-title{
+        font-size: larger;
+        font-weight: 900;
+    }
+
+    .progress{
+        width: 90%;
+        height: 10px;
+        background-color: $color2;
+        border-radius: 12px;
+        margin: 3% 0;
+        overflow: hidden;
+        box-shadow: $shadow;
+    }
+
+    .the-obs{
+        color: $color2;
+    }
+}
+
+.area-html .bar{
+    width: 93%;
+    height: 100%;
+    background-color: $color;
+}
+
+.area-css .bar:first-of-type{
+    width: 95%;
+    height: 100%;
+    background-color: $color;
+}
+
+.area-css .the-obs:nth-of-type(2){
+    font-weight: bold;
+}
+
+.area-Javascript .bar{
+    width: 85%;
+    height: 100%;
+    background-color: $color;
+}
+
+.area-Scss .bar{
+    width: 88%;
+    height: 100%;
+    background-color: $color;
+}
+
+.area-Git-Github .bar{
+    width: 90%;
+    height: 100%;
+    background-color: $color;
+}
+
+//area de main para projectos
+.area-to-projects{
+    margin: 4% 0;
+    padding: 4% 0;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.area-to-projects .card-xl{
+    width: 30%;
+    min-width: 350px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 15px;
+    @include glassmorfism();
+    
+    &:hover{
+        transform: skewY(1.1deg);
+    }
+    
+    img{
+        width:100%;
+    }
+
+    span{
+        display: block;
+        width: 100%;
+        padding-left: 25px;
+        font-size: large;
+        font-weight: 700;
+    }
+
+    p{
+        margin: 2% auto;
+        font-size: small;
+        text-align: justify;
+        height: 30%;
+    }
+
+    a{
+        width: 70%;
+        height: 30px;
+        margin: 0 auto;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        background-color: $color;
+        color: gray;
+
+        &:hover{
+            background-color: $color2;
+        }
+    }
+}
+
+.side-to-side{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+
+.side-to-side div{
+    min-width: 300px;
+    width: 45%;
+}
+
+.side-to-side div img{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.get-side-left{
+    min-width: 300px;
+    margin: 4% auto;
+    min-height: 380px;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    @include glassmorfismContraste();
+
+    a{
+        width: 80%;
+        margin: 3% auto;
+        height: 50px;
+        border-radius: 12px;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        background-color:white;
+        color: $text-color;
+
+        &:hover{
+            background-color: $text-color;
+            color: $color;
+        }
+    }
+}
