@@ -159,6 +159,10 @@ header a{
     }
 }
 
+.slide-text .list-links a:hover img{
+    transform: scale(1.1);
+}
+
 .side-image{
     display: flex;
     align-content: flex-end;
