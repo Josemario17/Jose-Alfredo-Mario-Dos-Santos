@@ -57,6 +57,7 @@ body{
     overflow-x: hidden;
     padding: 3% 2% 1% 2%;
     background-image: $gradient;
+    scroll-behavior: smooth;
 }
 
 
@@ -107,7 +108,7 @@ header a{
 }
 
 //especificações para area abaixo da nav-bar
-.lading-content{
+.lading__content{
     @extend header;
     padding: 2% 2%;
     margin: 5% auto;
@@ -118,7 +119,7 @@ header a{
    }
 }
 
-.lading-content .lading{
+.lading__content .lading__content--side{
     width: 40%;
     height: 100%;
     @media (max-width: 800px) {
@@ -128,11 +129,11 @@ header a{
    }
 }
 
-.lading-content .lading:nth-child(1) *{
+.lading__content .lading__content--side:nth-child(1) *{
     margin: 2% auto;
 }
 
-.slide-text p span{
+.is-slide-text p span{
     width: 100%;
     display: inline;
     padding: 0% 2%;
@@ -141,15 +142,15 @@ header a{
     font-weight: bold;
 }
 
-.slide-text h1{
+.is-slide-text h1{
     font-size: 3rem;
 }
 
-.slide-text p:nth-of-type(2){
+.is-slide-text p:nth-of-type(2){
     font-size: x-large;
 }
 
-.slide-text .list-links{
+.is-slide-text .list-links{
     width: 100%;
     height: 100%;
 
@@ -159,15 +160,15 @@ header a{
     }
 }
 
-.slide-text .list-links a:hover img{
+.is-slide-text .list-links a:hover img{
     transform: scale(1.1);
 }
 
-.side-image{
+.is-side-image{
     display: flex;
     align-content: flex-end;
 }
-.side-image *{
+.is-side-image *{
     width: 65%;
     margin: 0 auto;
 }
@@ -238,7 +239,7 @@ header nav{
     gap: 40px;
 }
 
-.area-to-skills .card-md{
+.area-to-skills .area-to-skills__card-md{
     width: 30%;
     min-width: 100px;
     display: flex;
@@ -247,21 +248,21 @@ header nav{
 
 }
 
-.area-to-skills .card-md img{
+.area-to-skills .area-to-skills__card-md img{
     width: 80%;
 }
 
-.area-to-skills .card-md .area-description{
+.area-to-skills .area-to-skills__card-md .area-description{
     width: 70%;
     margin: 0 auto;
-    @extend .card-md;
+    @extend .area-to-skills__card-md;
 
-    .area-title{
+    .area-description__area-title{
         font-size: larger;
         font-weight: 900;
     }
 
-    .progress{
+    .area-description__progress{
         width: 90%;
         height: 10px;
         background-color: $color2;
@@ -271,47 +272,34 @@ header nav{
         box-shadow: $shadow;
     }
 
-    .the-obs{
+    .area-description__the-obs{
         color: $color2;
     }
 }
 
-.area-html .bar{
+:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-css) .bar{
+    height: 100%;
+    background-color: $color;
+}
+
+.is-area-html .bar{
     width: 93%;
-    height: 100%;
-    background-color: $color;
 }
 
-.area-css .bar:first-of-type{
-    width: 95%;
-    height: 100%;
-    background-color: $color;
-}
-
-.area-css .the-obs:nth-of-type(2){
-    font-weight: bold;
-}
-
-.area-Javascript .bar{
+.is-area-Javascript .bar{
     width: 85%;
-    height: 100%;
-    background-color: $color;
 }
 
-.area-Scss .bar{
+.is-area-Scss .bar{
     width: 88%;
-    height: 100%;
-    background-color: $color;
 }
 
-.area-Git-Github .bar{
+.is-area-Git-Github .bar{
     width: 90%;
-    height: 100%;
-    background-color: $color;
 }
 
 //area de main para projectos
-.area-to-projects{
+.project-md__area{
     margin: 4% 0;
     padding: 4% 0;
     width: 100%;
@@ -323,7 +311,7 @@ header nav{
     gap: 40px;
 }
 
-.area-to-projects .card-xl{
+.project-md__area--card-xl{
     width: 30%;
     min-width: 350px;
     overflow: hidden;
@@ -374,7 +362,7 @@ header nav{
     }
 }
 
-.side-to-side{
+.get__side{
     width: 100%;
     height: 100%;
     display: flex;
@@ -383,17 +371,17 @@ header nav{
     justify-content: center;
 }
 
-.side-to-side div{
+.get__side div{
     min-width: 300px;
     width: 45%;
 }
 
-.side-to-side div img{
+.get__side div img{
     width: 80%;
     margin: 0 auto;
 }
 
-.get-side-left{
+.get-cv__side--left{
     min-width: 300px;
     margin: 4% auto;
     min-height: 380px;
@@ -455,7 +443,7 @@ header nav{
     }
 }
 .about-side-rigth{
-    @extend .get-side-left;
+    @extend .get-cv__side--left;
     @media (max-width: 800px) {
        padding: 3% 0%;
     }

@@ -21,6 +21,7 @@ body {
   overflow-x: hidden;
   padding: 3% 2% 1% 2%;
   background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+  scroll-behavior: smooth;
 }
 
 a {
@@ -41,7 +42,7 @@ input[type=checkbox] {
   display: none;
 }
 
-header, .lading-content {
+header, .lading__content {
   width: 100%;
   height: 100%;
   display: flex;
@@ -51,47 +52,47 @@ header, .lading-content {
   position: relative;
 }
 
-header :is(nav, div), .lading-content :is(nav, div) {
+header :is(nav, div), .lading__content :is(nav, div) {
   width: 30%;
   height: 100%;
 }
 
-header a, .lading-content a {
+header a, .lading__content a {
   padding: 0% 2.5%;
 }
-header a:hover, .lading-content a:hover {
+header a:hover, .lading__content a:hover {
   color: rgba(128, 128, 128, 0.433);
 }
 
-.lading-content {
+.lading__content {
   padding: 2% 2%;
   margin: 5% auto;
 }
 @media (max-width: 800px) {
-  .lading-content {
+  .lading__content {
     width: 100%;
     gap: 10%;
     flex-direction: column;
   }
 }
 
-.lading-content .lading {
+.lading__content .lading__content--side {
   width: 40%;
   height: 100%;
 }
 @media (max-width: 800px) {
-  .lading-content .lading {
+  .lading__content .lading__content--side {
     width: 100%;
     gap: 10%;
     flex-direction: column;
   }
 }
 
-.lading-content .lading:nth-child(1) * {
+.lading__content .lading__content--side:nth-child(1) * {
   margin: 2% auto;
 }
 
-.slide-text p span {
+.is-slide-text p span {
   width: 100%;
   display: inline;
   padding: 0% 2%;
@@ -100,33 +101,33 @@ header a:hover, .lading-content a:hover {
   font-weight: bold;
 }
 
-.slide-text h1 {
+.is-slide-text h1 {
   font-size: 3rem;
 }
 
-.slide-text p:nth-of-type(2) {
+.is-slide-text p:nth-of-type(2) {
   font-size: x-large;
 }
 
-.slide-text .list-links {
+.is-slide-text .list-links {
   width: 100%;
   height: 100%;
 }
-.slide-text .list-links .imagen-icon {
+.is-slide-text .list-links .imagen-icon {
   width: 50px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
 }
 
-.slide-text .list-links a:hover img {
+.is-slide-text .list-links a:hover img {
   transform: scale(1.1);
 }
 
-.side-image {
+.is-side-image {
   display: flex;
   align-content: flex-end;
 }
 
-.side-image * {
+.is-side-image * {
   width: 65%;
   margin: 0 auto;
 }
@@ -147,7 +148,7 @@ header a:hover, .lading-content a:hover {
 }
 
 @media (max-width: 800px) {
-  header nav, .lading-content nav {
+  header nav, .lading__content nav {
     display: none;
   }
 }
@@ -204,7 +205,7 @@ header a:hover, .lading-content a:hover {
   gap: 40px;
 }
 
-.area-to-skills .card-md, .area-to-skills .card-md .area-description {
+.area-to-skills .area-to-skills__card-md, .area-to-skills .area-to-skills__card-md .area-description {
   width: 30%;
   min-width: 100px;
   display: flex;
@@ -212,19 +213,19 @@ header a:hover, .lading-content a:hover {
   justify-content: center;
 }
 
-.area-to-skills .card-md img, .area-to-skills .card-md .area-description img {
+.area-to-skills .area-to-skills__card-md img, .area-to-skills .area-to-skills__card-md .area-description img {
   width: 80%;
 }
 
-.area-to-skills .card-md .area-description {
+.area-to-skills .area-to-skills__card-md .area-description {
   width: 70%;
   margin: 0 auto;
 }
-.area-to-skills .card-md .area-description .area-title {
+.area-to-skills .area-to-skills__card-md .area-description .area-description__area-title {
   font-size: larger;
   font-weight: 900;
 }
-.area-to-skills .card-md .area-description .progress {
+.area-to-skills .area-to-skills__card-md .area-description .area-description__progress {
   width: 90%;
   height: 10px;
   background-color: rgba(128, 128, 128, 0.433);
@@ -233,45 +234,32 @@ header a:hover, .lading-content a:hover {
   overflow: hidden;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
 }
-.area-to-skills .card-md .area-description .the-obs {
+.area-to-skills .area-to-skills__card-md .area-description .area-description__the-obs {
   color: rgba(128, 128, 128, 0.433);
 }
 
-.area-html .bar {
+:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-css) .bar {
+  height: 100%;
+  background-color: wheat;
+}
+
+.is-area-html .bar {
   width: 93%;
-  height: 100%;
-  background-color: wheat;
 }
 
-.area-css .bar:first-of-type {
-  width: 95%;
-  height: 100%;
-  background-color: wheat;
-}
-
-.area-css .the-obs:nth-of-type(2) {
-  font-weight: bold;
-}
-
-.area-Javascript .bar {
+.is-area-Javascript .bar {
   width: 85%;
-  height: 100%;
-  background-color: wheat;
 }
 
-.area-Scss .bar {
+.is-area-Scss .bar {
   width: 88%;
-  height: 100%;
-  background-color: wheat;
 }
 
-.area-Git-Github .bar {
+.is-area-Git-Github .bar {
   width: 90%;
-  height: 100%;
-  background-color: wheat;
 }
 
-.area-to-projects {
+.project-md__area {
   margin: 4% 0;
   padding: 4% 0;
   width: 100%;
@@ -283,7 +271,7 @@ header a:hover, .lading-content a:hover {
   gap: 40px;
 }
 
-.area-to-projects .card-xl {
+.project-md__area--card-xl {
   width: 30%;
   min-width: 350px;
   overflow: hidden;
@@ -298,26 +286,26 @@ header a:hover, .lading-content a:hover {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.area-to-projects .card-xl:hover {
+.project-md__area--card-xl:hover {
   transform: skewY(1.1deg);
 }
-.area-to-projects .card-xl img {
+.project-md__area--card-xl img {
   width: 100%;
 }
-.area-to-projects .card-xl span {
+.project-md__area--card-xl span {
   display: block;
   width: 100%;
   padding-left: 25px;
   font-size: large;
   font-weight: 700;
 }
-.area-to-projects .card-xl p {
+.project-md__area--card-xl p {
   margin: 2% auto;
   font-size: small;
   text-align: justify;
   height: 30%;
 }
-.area-to-projects .card-xl a {
+.project-md__area--card-xl a {
   width: 70%;
   height: 30px;
   margin: 0 auto;
@@ -329,11 +317,11 @@ header a:hover, .lading-content a:hover {
   background-color: wheat;
   color: gray;
 }
-.area-to-projects .card-xl a:hover {
+.project-md__area--card-xl a:hover {
   background-color: rgba(128, 128, 128, 0.433);
 }
 
-.side-to-side {
+.get__side {
   width: 100%;
   height: 100%;
   display: flex;
@@ -342,17 +330,17 @@ header a:hover, .lading-content a:hover {
   justify-content: center;
 }
 
-.side-to-side div {
+.get__side div {
   min-width: 300px;
   width: 45%;
 }
 
-.side-to-side div img {
+.get__side div img {
   width: 80%;
   margin: 0 auto;
 }
 
-.get-side-left, .about-side-rigth {
+.get-cv__side--left, .about-side-rigth {
   min-width: 300px;
   margin: 4% auto;
   min-height: 380px;
@@ -368,7 +356,7 @@ header a:hover, .lading-content a:hover {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-.get-side-left a, .about-side-rigth a {
+.get-cv__side--left a, .about-side-rigth a {
   width: 80%;
   margin: 3% auto;
   height: 50px;
@@ -383,7 +371,7 @@ header a:hover, .lading-content a:hover {
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
-.get-side-left a:hover, .about-side-rigth a:hover {
+.get-cv__side--left a:hover, .about-side-rigth a:hover {
   background-color: gray;
   color: wheat;
 }

@@ -35,8 +35,8 @@
     </header>
 
     <!--page second content -->
-    <div class="lading-content">
-        <section class="lading slide-text">
+    <div class="lading__content">
+        <section class="lading__content--side is-slide-text">
             <p>Hello i´m <span>José Dos Santos</span></p>
             <h1>Front End <strong>Developper</strong></h1>
             <p>Student and dev Front End with skills in Html, css (Tailwind css - Bootstrap), Javascript (React).</p>
@@ -47,7 +47,7 @@
             </div>
         </section>
         
-        <div class="lading side-image">
+        <div class="lading__content--side  is-side-image">
             <img src="assets/images/foto-1.jpg" alt="José Alfredo Mário Dos Santos">
         </div>
     </div>
@@ -61,54 +61,65 @@
                 <div class="area-to-skills">
                     
                     <!-- Area to show the Html skill -->
-                    <div class="area-html card-md">
+                    <div class="area-to-skills__card-md is-area-html">
                         <img src="assets/images/html-4781249.png" alt="html">
                         <div class="area-description">
-                            <span class="area-title">Html</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs">excellent</span>
+                            <span class="area-description__area-title">Html</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">excellent</span>
                         </div>
                     </div>
 
                     <!-- Area to show the Css skill -->
-                    <div class="area-css card-md">
+                    <div class="area-to-skills__card-md is-area-css ">
                         <img src="assets/images/css3.png" alt="css">
                         <div class="area-description">
-                            <span class="area-title">Css</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs">Tailwind / Bootstrap</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs">excellent</span></span>
+                            <span class="area-description__area-title">Css</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">excellent</span>
                         </div>
                     </div>
+
 
                      <!-- Area to show the Javascript skill -->
-                     <div class="area-Javascript card-md">
+                     <div class="area-to-skills__card-md is-area-Javascript">
                         <img src="assets/images/javascript-logo.png" alt="Javascript">
                         <div class="area-description">
-                            <span class="area-title">Javascript</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs">intermediate</span>
+                            <span class="area-description__area-title">Javascript</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">intermediate</span>
                         </div>
                     </div>
 
+                    
+                    <!-- Area to show the Css-tailwind skill -->
+                    <div class="area-to-skills__card-md is-area-css ">
+                        <img src="assets/images/tailwind-css.svg" alt="css">
+                        <div class="area-description">
+                            <span class="area-description__area-title">tailwind-css</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">excellent</span>
+                        </div>
+                    </div>
+
+
                      <!-- Area to show the Scss skill -->
-                     <div class="area-Scss card-md">
+                     <div class="area-to-skills__card-md is-area-Scss">
                         <img src="assets/images/sass.png" alt="sass">
                         <div class="area-description">
-                            <span class="area-title">Sass</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs">excellent</span>
+                            <span class="area-description__area-title">Sass</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">excellent</span>
                         </div>
                     </div>
                     
                     <!-- Area to show the Git-Github skill -->
-                    <div class="area-Git-Github card-md">
+                    <div class="area-to-skills__card-md is-area-Git-Github ">
                         <img src="assets/images/github.png" alt="Git-Github">
                         <div class="area-description">
-                            <span class="area-title">Git-Github</span>
-                            <div class="progress"><div class="bar"></div></div>
-                            <span class="the-obs"></span>
+                            <span class="area-description__area-title">Git-Github</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs"></span>
                         </div>
                     </div>
             </section>
@@ -117,10 +128,10 @@
             <section id="project-md">
                 <h2>My latest Projects Describe</h2>
                 <p>Projects that i've working in Last times</p>
-                <div class="area-to-projects">
+                <div class="project-md__area">
 
                     <!-- grid-1 -->
-                    <div class="card-xl">
+                    <div class="project-md__area--card-xl">
                         <img src="assets/images/project-1.jpeg" alt="gestor de fundos">
                         <span class="card-title">Expense Manager</span>
                         <p>An Expense Manager with Object-Oriented Javascript, to give a touch to studies in Javascript and css pre-processors</p>
@@ -128,7 +139,7 @@
                     </div>
 
                     <!-- grid-2 -->
-                    <div class="card-xl">
+                    <div class="project-md__area--card-xl">
                         <img src="assets/images/project-2.jpeg" alt="replicador de componentes">
                         <span class="card-title">Component Replicator</span>
                         <p>A project that replicates already customized Element classes with all elements, stylizations and classes to be Based on the BOOTSTRAP framework, the application also allows you to create multiple layouts and websites at the moment..</p>
@@ -136,7 +147,7 @@
                     </div>
 
                     <!-- grid-3 -->
-                    <div class="card-xl">
+                    <div class="project-md__area--card-xl">
                         <img src="assets/images/project-3.jpeg" alt="LiveChat">
                         <span class="card-title">LiveChat</span>
                         <p>A project involving studies in HTML, CSS, JAVASCRIPT, with functions such as: sending instant messages, instant posts, changing profile and cover photos, responsiveness and super cool effects. <small>NOTE: there is no responsiveness for the chat area, devices smaller than 700px are not accepted</small>.</p>
@@ -147,14 +158,14 @@
 
             <!-- get Cv describe -->
             <section id="get-cv">
-                <div class="side-to-side">
-                    <div class="get-side-left">   
+                <div class="get__side">
+                    <div class="get-cv__side--left">   
                         <h2>Get Cv</h2>
                         <p>Get my cv and see more about my expiriences and my gradutions</p>
                         <a href="assets/arquives/curriculum/cv.pdf">Download Cv</a>
                     </div>
     
-                    <div class="get-side-rigth">
+                    <div class="get-cv__side--rigth">
                         <img src="assets/images/businessman-signing-contract.png" alt="businessman-signing-contract">
                     </div>
                 </div>
@@ -163,7 +174,7 @@
             
             <!-- about me describe -->
             <section id="about-md">
-                <div class="side-to-side">
+                <div class="get__side">
                     <div class="about-side-left">
                         <img src="assets/images/foto-1.jpg" alt="José Alfredo Mário dos Santos">    
                     </div>
@@ -202,11 +213,11 @@
         </button>
     </div>
     <footer>
-        <div class="text">
+        <div class="footer__element">
             <p>José Alfredo Mário Dos Santos</p>
         </div>
 
-        <div class="text">
+        <div class="footer__element">
             <p>All rigths reserved - copyrigth 2023.</p>
         </div>
     </footer>
