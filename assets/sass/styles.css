@@ -20,7 +20,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   padding: 3% 2% 1% 2%;
-  background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+  background-image: linear-gradient(90deg, rgb(202, 219, 221) 0%, #c8eeec 50%, #cceceb 100%);
   scroll-behavior: smooth;
 }
 
@@ -61,7 +61,7 @@ header a, .lading__content a {
   padding: 0% 2.5%;
 }
 header a:hover, .lading__content a:hover {
-  color: rgba(128, 128, 128, 0.433);
+  color: rgb(44, 44, 44);
 }
 
 .lading__content {
@@ -96,8 +96,10 @@ header a:hover, .lading__content a:hover {
   width: 100%;
   display: inline;
   padding: 0% 2%;
-  background-color: wheat;
+  background-color: #097079;
   border-radius: 12px;
+  font-weight: bold;
+  color: white;
   font-weight: bold;
 }
 
@@ -197,24 +199,31 @@ header a:hover, .lading__content a:hover {
 }
 
 .area-to-skills {
+  margin: 4% 0 0 0;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 20px;
 }
 
 .area-to-skills .area-to-skills__card-md, .area-to-skills .area-to-skills__card-md .area-description {
-  width: 30%;
-  min-width: 100px;
+  width: 22%;
+  min-width: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media (max-width: 1000px) {
+  .area-to-skills .area-to-skills__card-md, .area-to-skills .area-to-skills__card-md .area-description {
+    width: 40%;
+  }
+}
 
 .area-to-skills .area-to-skills__card-md img, .area-to-skills .area-to-skills__card-md .area-description img {
   width: 80%;
+  margin: 0 auto;
 }
 
 .area-to-skills .area-to-skills__card-md .area-description {
@@ -235,12 +244,12 @@ header a:hover, .lading__content a:hover {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
 }
 .area-to-skills .area-to-skills__card-md .area-description .area-description__the-obs {
-  color: rgba(128, 128, 128, 0.433);
+  color: rgb(44, 44, 44);
 }
 
-:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-css) .bar {
+:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-type, .is-area-css) .bar {
   height: 100%;
-  background-color: wheat;
+  background-color: #097079;
 }
 
 .is-area-html .bar {
@@ -253,6 +262,10 @@ header a:hover, .lading__content a:hover {
 
 .is-area-Scss .bar {
   width: 88%;
+}
+
+.is-area-type .bar {
+  width: 78%;
 }
 
 .is-area-Git-Github .bar {
@@ -273,7 +286,7 @@ header a:hover, .lading__content a:hover {
 
 .project-md__area--card-xl {
   width: 30%;
-  min-width: 350px;
+  min-width: 300px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -308,17 +321,18 @@ header a:hover, .lading__content a:hover {
 .project-md__area--card-xl a {
   width: 70%;
   height: 30px;
+  padding: 1% 0;
   margin: 0 auto;
   display: grid;
   align-content: center;
   justify-content: center;
   border-radius: 12px;
   margin-bottom: 18px;
-  background-color: wheat;
-  color: gray;
+  background-color: #097079;
+  color: white;
 }
 .project-md__area--card-xl a:hover {
-  background-color: rgba(128, 128, 128, 0.433);
+  background-color: rgb(44, 44, 44);
 }
 
 .get__side {
@@ -349,12 +363,13 @@ header a:hover, .lading__content a:hover {
   align-content: center;
   justify-content: center;
   text-align: center;
-  background: wheat;
+  background: #097079;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
 }
 .get-cv__side--left a, .about-side-rigth a {
   width: 80%;
@@ -365,7 +380,7 @@ header a:hover, .lading__content a:hover {
   align-content: center;
   justify-content: center;
   background-color: white;
-  color: gray;
+  color: #097079;
   transition: 2s ease-in-out;
   animation-name: rodar;
   animation-duration: 2s;
@@ -373,7 +388,7 @@ header a:hover, .lading__content a:hover {
 }
 .get-cv__side--left a:hover, .about-side-rigth a:hover {
   background-color: gray;
-  color: wheat;
+  color: #097079;
 }
 @keyframes rodar {
   from {
@@ -414,7 +429,7 @@ section form {
   padding: 4%;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+  background-image: linear-gradient(90deg, rgb(202, 219, 221) 0%, #c8eeec 50%, #cceceb 100%);
   border-radius: 12px;
 }
 
@@ -427,25 +442,33 @@ section form :is(input, textarea) {
   width: 100%;
   max-width: 800px;
   padding: 1% 3%;
-  border: 1px solid rgba(128, 128, 128, 0.433);
+  border: 1px solid rgb(44, 44, 44);
   border-radius: 6px;
+  outline: 1px solid transparent;
+}
+section form :is(input, textarea):focus {
+  border-top: 1px solid transparent;
+  outline: 1px solid #097079;
 }
 
 section form button[type=submit] {
   width: 60%;
   height: 35px;
   margin: 3% auto;
-  background-color: wheat;
+  background-color: #097079;
+  color: white;
+  font-weight: bold;
+  font-size: large;
   border-radius: 6px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
   cursor: pointer;
 }
 section form button[type=submit]:hover {
-  background-color: rgba(128, 128, 128, 0.433);
+  background-color: rgb(44, 44, 44);
 }
 
 footer {
-  border-top: 1px solid rgba(128, 128, 128, 0.433);
+  border-top: 1px solid rgb(44, 44, 44);
   width: 60%;
   margin: 0 auto;
   display: flex;
@@ -484,11 +507,15 @@ footer div {
   height: 50px;
   border-radius: 6px;
   cursor: pointer;
-  background-color: rgba(128, 128, 128, 0.433);
+  background-color: #097079;
+  transition: 0.5s ease-out;
+}
+.top-call-area button * {
   transition: 0.5s ease-out;
 }
 .top-call-area button:hover {
-  background-image: linear-gradient(90deg, white 0%, #dddded 50%, wheat 100%);
+  background-color: rgb(44, 44, 44);
+  color: white;
 }
 
 .top-call-area button svg {
@@ -497,4 +524,65 @@ footer div {
   margin: 0 auto;
   display: grid;
   align-content: center;
+}
+
+.message__success {
+  position: fixed;
+  width: 350px;
+  height: 70px;
+  top: 10%;
+  right: 3%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
+  border: 0.5px solid white;
+  animation-name: showMessage;
+  animation-duration: 1.5s;
+}
+
+.message__success--child {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  background-color: rgba(9, 112, 121, 0.8549019608);
+}
+.message__success--child:nth-child(1) {
+  justify-content: start;
+  border-bottom: 0.21px solid white;
+}
+.message__success--child:nth-child(1) span svg {
+  display: block;
+  padding-right: 10px;
+  width: 28px;
+}
+.message__success--child span {
+  color: white;
+}
+.message__success--child:nth-child(2) {
+  background-color: rgba(9, 112, 121, 0.9254901961);
+}
+.message__success--child:nth-child(2) span {
+  width: 100%;
+}
+
+.display-none {
+  display: none !important;
+  transition: 1s display;
+}
+
+@keyframes showMessage {
+  from {
+    top: 18%;
+    opacity: 15%;
+  }
+  to {
+    top: 10%;
+    opacity: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */

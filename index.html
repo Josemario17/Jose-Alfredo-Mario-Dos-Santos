@@ -26,7 +26,7 @@
         </label>
 
         <nav>
-            <a href="">Home</a>
+            <a href="#">Home</a>
             <a href="#project-md">Portfolio</a>
             <a href="#get-cv">My CV</a>
             <a href="#about-md">About me</a>
@@ -41,14 +41,13 @@
             <h1>Front End <strong>Developper</strong></h1>
             <p>Student and dev Front End with skills in Html, css (Tailwind css - Bootstrap), Javascript (React).</p>
             <div class="list-links">
-                <a href="http://facebook.com/josydossantos.1004"><img src="assets/images/icons8-facebook-novo-64.png" alt="icons8-facebook-novo-64" class="imagen-icon"></a>
                 <a href="https://www.linkedin.com/in/jos%C3%A9-m%C3%A1rio-dos-santos-625809228/"><img src="assets/images/icons8-linkedin-48.png" alt="icons8-linkedin-48" class="imagen-icon"></a>
                 <a href="http://github.com/Josemario17"><img src="assets/images/icons8-github-64.png" alt="icons8-github-64" class="imagen-icon"></a>
             </div>
         </section>
         
         <div class="lading__content--side  is-side-image">
-            <img src="assets/images/foto-1.jpg" alt="José Alfredo Mário Dos Santos">
+            <img src="assets/images/foto-1.png" alt="José Alfredo Mário Dos Santos">
         </div>
     </div>
 
@@ -119,10 +118,32 @@
                         <div class="area-description">
                             <span class="area-description__area-title">Git-Github</span>
                             <div class="area-description__progress"><div class="bar"></div></div>
-                            <span class="area-description__the-obs"></span>
+                            <span class="area-description__the-obs">excellent</span>
+                        </div>
+                    </div>
+
+                    <!-- Area to show the type skill -->
+                     <div class="area-to-skills__card-md is-area-type">
+                        <img src="assets/images/bootstrap-framework-logo.png" alt="sass">
+                        <div class="area-description">
+                            <span class="area-description__area-title">Sass</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">good</span>
+                        </div>
+                    </div>
+
+                     <!-- Area to show the type skill -->
+                     <div class="area-to-skills__card-md is-area-type">
+                        <img src="assets/images/react.png" alt="sass">
+                        <div class="area-description">
+                            <span class="area-description__area-title">Sass</span>
+                            <div class="area-description__progress"><div class="bar"></div></div>
+                            <span class="area-description__the-obs">good</span>
                         </div>
                     </div>
             </section>
+
+            
 
             <!-- Projects describe -->
             <section id="project-md">
@@ -162,7 +183,7 @@
                     <div class="get-cv__side--left">   
                         <h2>Get Cv</h2>
                         <p>Get my cv and see more about my expiriences and my gradutions</p>
-                        <a href="assets/arquives/curriculum/cv.pdf">Download Cv</a>
+                        <a href="assets/arquives/curriculum/CV_Resume.pdf">Download Cv</a>
                     </div>
     
                     <div class="get-cv__side--rigth">
@@ -176,7 +197,7 @@
             <section id="about-md">
                 <div class="get__side">
                     <div class="about-side-left">
-                        <img src="assets/images/foto-1.jpg" alt="José Alfredo Mário dos Santos">    
+                        <img src="assets/images/foto-1.png" alt="José Alfredo Mário dos Santos">    
                     </div>
     
                     <div class="about-side-rigth">
@@ -192,15 +213,27 @@
             <section id="contact">
                 <h2>Contact me</h2>
                 <p>This form allows you to contact the José Alfredo Mário Dos Santos</p>
-                <form action="">
+                <form action="" id="sendMessage">
                     <label for="t-email">Email</label>
                     <input type="email" name="t-email" id="t-email" placeholder="write your email" required>
                     <label for="t-title">Title</label>
                     <input type="text" name="t-title" id="t-title" placeholder="write your title" required>
                     <label for="t-all">Subject</label>
                     <textarea name="t-all" id="t-all" cols="30" rows="10" placeholder="write your Subject" required></textarea>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="btnSend">Submit</button>
                 </form>
+                <div class="message__success display-none" id="messageSuccess">
+                    <div class="message__success--child">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Sucesso</span>
+                    </div>
+                    <div class="message__success--child">
+                        <span>Mensagem enviada com sucesso.</span>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
@@ -221,6 +254,7 @@
             <p>All rigths reserved - copyrigth 2023.</p>
         </div>
     </footer>
+
 </body>
 
 <!-- Javascript content  -->

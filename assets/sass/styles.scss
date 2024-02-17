@@ -1,8 +1,9 @@
-$color: wheat;
+$color: #097079;
 $color2: rgba(128, 128, 128, 0.433);
 $text-color: gray;
+$darkGray: rgb(44, 44, 44);
 $shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.055);
-$gradient: linear-gradient(90deg, white 0%, #dddded 50%, $color 100%);
+$gradient: linear-gradient(90deg, rgb(202, 219, 221) 0%, #c8eeec 50%, #cceceb 100%);
 
 
 @mixin glassmorfism{
@@ -103,7 +104,7 @@ header a{
     padding: 0% 2.5%;
     
     &:hover{
-        color: $color2;
+        color: $darkGray;
     }
 }
 
@@ -139,6 +140,8 @@ header a{
     padding: 0% 2%;
     background-color: $color;
     border-radius: 12px;
+    font-weight: bold;
+    color: white;
     font-weight: bold;
 }
 
@@ -231,25 +234,29 @@ header nav{
 }
 
 .area-to-skills{
+    margin: 4% 0 0 0;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
 }
 
 .area-to-skills .area-to-skills__card-md{
-    width: 30%;
-    min-width: 100px;
+    width: 22%;
+    min-width: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    @media (max-width: 1000px) {
+        width: 40%;
+     }
 }
 
 .area-to-skills .area-to-skills__card-md img{
     width: 80%;
+    margin: 0 auto;
 }
 
 .area-to-skills .area-to-skills__card-md .area-description{
@@ -273,11 +280,11 @@ header nav{
     }
 
     .area-description__the-obs{
-        color: $color2;
+        color: $darkGray;
     }
 }
 
-:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-css) .bar{
+:is(.is-area-Git-Github, .is-area-html, .is-area-Javascript, .is-area-Scss, .is-area-type, .is-area-css) .bar{
     height: 100%;
     background-color: $color;
 }
@@ -292,6 +299,10 @@ header nav{
 
 .is-area-Scss .bar{
     width: 88%;
+}
+
+.is-area-type .bar{
+    width: 78%;
 }
 
 .is-area-Git-Github .bar{
@@ -313,7 +324,7 @@ header nav{
 
 .project-md__area--card-xl{
     width: 30%;
-    min-width: 350px;
+    min-width: 300px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -347,6 +358,7 @@ header nav{
     a{
         width: 70%;
         height: 30px;
+        padding: 1% 0;
         margin: 0 auto;
         display: grid;
         align-content: center;
@@ -354,10 +366,10 @@ header nav{
         border-radius: 12px;
         margin-bottom: 18px;
         background-color: $color;
-        color: gray;
+        color: white;
 
         &:hover{
-            background-color: $color2;
+            background-color: $darkGray;
         }
     }
 }
@@ -391,6 +403,7 @@ header nav{
     justify-content: center;
     text-align: center;
     @include glassmorfismContraste();
+    color: white;
 
     a{
         width: 80%;
@@ -401,7 +414,7 @@ header nav{
         align-content: center;
         justify-content: center;
         background-color:white;
-        color: $text-color;
+        color: $color;
         transition: 2s ease-in-out;
         animation-name: rodar;
         animation-duration: 2s;
@@ -469,8 +482,15 @@ section form :is(input, textarea){
     width: 100%;
     max-width: 800px;
     padding: 1% 3%;
-    border: 1px solid $color2;
+    border: 1px solid $darkGray;
     border-radius: 6px;
+    outline: 1px solid transparent;
+
+
+    &:focus{
+        border-top: 1px solid transparent;
+        outline: 1px solid $color;
+    }
 }
 
 section form button[type="submit"]{
@@ -478,17 +498,20 @@ section form button[type="submit"]{
     height: 35px;
     margin: 3% auto;
     background-color: $color;
+    color: white;
+    font-weight: bold;
+    font-size: large;
     border-radius: 6px;
     box-shadow: $shadow;
     cursor: pointer;
 
     &:hover{
-        background-color: $color2;
+        background-color: $darkGray;
     }
 }
 
 footer{
-    border-top: 1px solid $color2;
+    border-top: 1px solid $darkGray;
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -525,11 +548,16 @@ footer div{
     height: 50px;
     border-radius: 6px;
     cursor: pointer;
-    background-color: $color2;
+    background-color: $color;
     transition: .5s ease-out;
 
+    *{
+        transition: .5s ease-out;
+    }
+
     &:hover{
-        background-image: $gradient;
+        background-color: $darkGray;
+        color: white;
     }
 
 }
@@ -540,4 +568,70 @@ footer div{
         margin: 0 auto;
         display: grid;
         align-content: center;
+}
+
+.message__success{
+    position: fixed;
+    width: 350px;
+    height: 70px;
+    top: 10%;
+    right: 3%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: $shadow;
+    border: .5px solid white;
+    animation-name: showMessage;
+    animation-duration: 1.5s;
+}
+
+.message__success--child{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+    background-color: #097079da;
+
+    &:nth-child(1){
+        justify-content: start;
+        border-bottom: .21px solid white;
+        
+        span svg{
+            display: block;
+            padding-right: 10px;
+            width: 28px;
+        }
+    }
+    
+    span{
+        color: white;
+    }
+
+    &:nth-child(2){
+        background-color: #097079ec;
+        span{
+            width: 100%;
+        }
+    }
+}
+
+.display-none{
+    display: none !important;
+    transition: 1s display;
+}
+
+@keyframes showMessage {
+    from{
+        top: 18%;
+        opacity: 15%;
+    }
+
+    to{
+        top: 10%;
+        opacity: 100%;
+    }
 }
