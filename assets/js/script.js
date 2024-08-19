@@ -18,3 +18,7 @@ sendMessage.addEventListener("submit", (e)=>{
         document.getElementById("messageSuccess").classList.add("display-none")
     }, 2500);
 })
+
+const dataLocalArea = document.getElementById("date")
+var dataLocal = new Date()
+dataLocalArea.innerText = "" + dataLocal.getFullYear()

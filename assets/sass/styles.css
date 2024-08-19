@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: minhaFonte;
   src: url("../arquives/font/Poppins/Poppins-Regular.ttf");
@@ -57,11 +58,36 @@ header :is(nav, div), .lading__content :is(nav, div) {
   height: 100%;
 }
 
+.firstTopContent {
+  width: 45%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.firstTopContent span::first-letter {
+  font-size: 4em; /* Ajuste o tamanho conforme necessário */
+  float: left;
+  margin-right: 0.1em; /* Ajuste a margem conforme necessário */
+  line-height: 1;
+}
+
 header a, .lading__content a {
   padding: 0% 2.5%;
+  color: rgb(84, 84, 84);
 }
 header a:hover, .lading__content a:hover {
   color: rgb(44, 44, 44);
+}
+
+a[href="#contact"] {
+  padding: 2px 13px;
+  background-color: #097079;
+  color: white;
+  border-radius: 14px;
+  border: 2px solid white;
+}
+a[href="#contact"]:hover {
+  background-color: rgba(9, 112, 121, 0.121);
 }
 
 .lading__content {
@@ -188,6 +214,7 @@ header a:hover, .lading__content a:hover {
   width: 80%;
   height: 100%;
   margin: 0 auto;
+  width: 85%;
   margin-top: 5%;
 }
 
@@ -285,7 +312,7 @@ header a:hover, .lading__content a:hover {
 }
 
 .project-md__area--card-xl {
-  width: 30%;
+  width: 31%;
   min-width: 300px;
   overflow: hidden;
   display: flex;
@@ -305,6 +332,18 @@ header a:hover, .lading__content a:hover {
 .project-md__area--card-xl img {
   width: 100%;
 }
+.project-md__area--card-xl .list-badge {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding-left: 20px;
+}
+.project-md__area--card-xl .list-badge .badge {
+  padding: 1px 10px;
+  font-size: 12px;
+  background-color: rgba(9, 112, 121, 0.262745098);
+  border-radius: 20px;
+}
 .project-md__area--card-xl span {
   display: block;
   width: 100%;
@@ -312,14 +351,17 @@ header a:hover, .lading__content a:hover {
   font-size: large;
   font-weight: 700;
 }
-.project-md__area--card-xl p {
-  margin: 2% auto;
+.project-md__area--card-xl p.text-card {
+  margin: 2% 0;
   font-size: small;
-  text-align: justify;
   height: 30%;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 15px;
+  text-align: left;
 }
 .project-md__area--card-xl a {
-  width: 70%;
+  width: 90%;
   height: 30px;
   padding: 1% 0;
   margin: 0 auto;

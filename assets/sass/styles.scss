@@ -100,11 +100,38 @@ header :is(nav, div){
     height: 100%;
 }
 
+.firstTopContent{
+    width: 45%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    span::first-letter{
+        font-size: 4em; /* Ajuste o tamanho conforme necessário */
+        float: left;
+        margin-right: 0.1em; /* Ajuste a margem conforme necessário */
+        line-height: 1
+    }
+  }
+
 header a{
     padding: 0% 2.5%;
+    color: rgb(84, 84, 84);
     
     &:hover{
         color: $darkGray;
+    }
+}
+
+a[href="#contact"]{
+    padding: 2px 13px;
+    background-color: #097079;
+    color: white;
+    border-radius: 14px;
+    border: 2px solid white;
+
+    &:hover{
+     background-color:rgba(9, 112, 121, 0.121);
     }
 }
 
@@ -225,6 +252,7 @@ header nav{
 
 .container section{
     @include mainMixin();
+    width: 85%;
     margin-top: 5%;
 }
 
@@ -323,7 +351,7 @@ header nav{
 }
 
 .project-md__area--card-xl{
-    width: 30%;
+    width: 31%;
     min-width: 300px;
     overflow: hidden;
     display: flex;
@@ -340,6 +368,20 @@ header nav{
         width:100%;
     }
 
+    .list-badge{
+        display: flex;
+        gap: 8px;
+        list-style: none;
+        padding-left: 20px;
+
+        .badge{
+            padding: 1px 10px;
+            font-size: 12px;
+            background-color: #09707943;
+            border-radius: 20px;
+        }
+    }
+
     span{
         display: block;
         width: 100%;
@@ -347,16 +389,20 @@ header nav{
         font-size: large;
         font-weight: 700;
     }
+    
 
-    p{
-        margin: 2% auto;
+    p.text-card{
+        margin: 2% 0;
         font-size: small;
-        text-align: justify;
         height: 30%;
+        width: 100%;
+        padding-left: 25px;
+        padding-right: 15px;
+        text-align: left;
     }
 
     a{
-        width: 70%;
+        width: 90%;
         height: 30px;
         padding: 1% 0;
         margin: 0 auto;
