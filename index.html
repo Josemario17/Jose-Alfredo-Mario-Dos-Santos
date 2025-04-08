@@ -39,7 +39,7 @@
         <section class="lading__content--side is-slide-text">
             <p>Hello i´m <span>José Dos Santos</span></p>
             <h1><strong>Web Developper and .Net entusiast</strong></h1>
-            <p>Student and programmer/developer in the languages Javascript and C#.</p>
+            <p>Student and programmer/developer</p>
             <div class="list-links">
                 <a target="_blank" href="https://www.linkedin.com/in/jos%C3%A9-m%C3%A1rio-dos-santos-625809228/"><img src="assets/images/icons8-linkedin-48.png" alt="icons8-linkedin-48" class="imagen-icon"></a>
                 <a target="_blank" href="http://github.com/Josemario17"><img src="assets/images/icons8-github-64.png" alt="icons8-github-64" class="imagen-icon"></a>
@@ -163,6 +163,46 @@
                    </div>
             </section>
 
+            <!-- Latest Project Section -->
+            <section id="latest-project">
+                <h2>My Latest Project</h2>
+                <p>Here's the most recent project I've worked on, including an application.</p>
+                <div class="latest-project__container">
+                    <!-- Image Gallery Area -->
+                    <div class="latest-project__slider">
+                        <!-- Main Image Display -->
+                        <div class="main-image-container">
+                            <img src="assets/images/monizza.png" alt="Main image of Latest Project" id="mainProjectImage">
+                        </div>
+                        <!-- Thumbnail Images -->
+                        <div class="thumbnail-container">
+                            <img src="assets/images/img-monizza-1.jpg" alt="Thumbnail 1" class="thumbnail active-thumbnail">
+                            <img src="assets/images/img-monizza-5.jpg" alt="Thumbnail 2" class="thumbnail">
+                            <img src="assets/images/img-monizza-4.jpg" alt="Thumbnail 3" class="thumbnail">
+                            <img src="assets/images/img-monizza-3.jpg" alt="Thumbnail 4" class="thumbnail">
+                            <img src="assets/images/img-monizza-2.jpg" alt="Thumbnail 5" class="thumbnail">
+                            <!-- Add more thumbnails if needed -->
+                        </div>
+                    </div>
+                    <!-- Project Details Area -->
+                    <div class="latest-project__details">
+                        <h3>Monizza</h3>
+                        <ul class="list-badge" style="list-style: none;">
+                            <!-- Replace with the technologies used -->
+                            <li class="badge">React Native</li>
+                            <li class="badge">Expo</li>
+                            <li class="badge">Typescript</li>
+                            <li class="badge">Zustand</li>
+                            <li class="badge">Swr</li>
+                            <li class="badge"></li>
+                        </ul>
+                        <p>A platform that connects currency buyers and sellers. The best platform to find who sells and buys currencies, connecting buyers and sellers in a safe and reliable community for currency trading.</p>
+                        <!-- Optional: Add a link if available -->
+                        <a target="_blank" href="https://monizza-website.vercel.app/">See more</a>
+                    </div>
+                </div>
+            </section>
+
             <!-- Projects describe -->
             <section id="project-md">
                 <h2>My latest Projects Describe</h2>
@@ -207,7 +247,7 @@
                             <li class="badge">SWR</li>
                         </ul>
                         <p class="text-card">the Angolan blog that provide news and entertainment.</p>
-                        <a target="_blank" href="https://www.universotimes.me/">See more</a>
+                        <a target="_blank" href="https://universotimes-full-josemario17s-projects.vercel.app/">See more</a>
                     </div>
 
                     <!-- grid-4 -->
@@ -300,7 +340,7 @@
                     <div class="get-cv__side--left">   
                         <h2>Get Cv</h2>
                         <p>Get my cv and see more about my expiriences and my gradutions</p>
-                        <a href="assets/arquives/curriculum/CV - update - en.pdf">Download Cv</a>
+                        <a href="assets/arquives/curriculum/CV - update - pt.pdf">Download Cv</a>
                     </div>
     
                     <div class="get-cv__side--rigth">
@@ -371,6 +411,15 @@
             <p>All rigths reserved - copyrigth <span id="date"></span>.</p>
         </div>
     </footer>
+
+    <!-- Lightbox Structure (Hidden by default) -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <!-- Navigation Arrows -->
+        <a class="lightbox-prev">&#10094;</a>
+        <a class="lightbox-next">&#10095;</a>
+    </div>
 
 </body>
 

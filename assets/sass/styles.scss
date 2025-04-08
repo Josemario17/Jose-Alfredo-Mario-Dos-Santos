@@ -671,13 +671,258 @@ footer div{
 }
 
 @keyframes showMessage {
-    from{
-        top: 18%;
-        opacity: 15%;
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Estilos para a seção Latest Project
+#latest-project {
+    margin-top: 5%;
+    padding: 2% 0;
+
+    h2, p:first-of-type {
+        text-align: center;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
     }
 
-    to{
-        top: 10%;
-        opacity: 100%;
+    .latest-project__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 2em;
+    }
+
+    .latest-project__slider {
+        flex: 1 1 45%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+
+        .main-image-container {
+            width: 100%;
+            margin-bottom: 15px;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .thumbnail {
+                width: calc(20% - 8px);
+                max-width: 80px;
+                height: auto;
+                border-radius: 4px;
+                cursor: pointer;
+                opacity: 0.7;
+                transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+                border: 2px solid transparent;
+
+                &:hover {
+                    opacity: 1;
+                    transform: scale(1.05);
+                }
+
+                &.active-thumbnail {
+                    opacity: 1;
+                    border-color: #097079;
+                    box-shadow: 0 0 8px rgba(9, 112, 121, 0.5);
+                }
+            }
+        }
+    }
+
+    .latest-project__details {
+        flex: 1 1 45%;
+        max-width: 500px;
+
+        h3 {
+            font-family: minhaFonte;
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        .list-badge {
+            margin-bottom: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+
+            .badge {
+                padding: 2px 12px;
+                font-size: 12px;
+                background-color: rgba(9, 112, 121, 0.2);
+                border-radius: 15px;
+                color: #075a61;
+                font-weight: 500;
+                line-height: 1.5;
+            }
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+            text-align: left;
+            width: 100%;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 8px 15px;
+            background-color: #097079;
+            color: white;
+            border-radius: 14px;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(#097079, 10%);
+                border-color: darken(#097079, 10%);
+            }
+        }
+    }
+
+    @media (max-width: 800px) {
+        .latest-project__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .latest-project__slider,
+        .latest-project__details {
+            flex-basis: 100%;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .latest-project__details {
+            text-align: center;
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            p {
+                text-align: center;
+            }
+            .list-badge {
+                justify-content: center;
+            }
+            a {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+// Lightbox Styles
+.lightbox {
+    display: none; // Hidden by default
+    position: fixed; // Stay in place
+    z-index: 1000; // Sit on top
+    padding-top: 60px; // Location of the box
+    left: 0;
+    top: 0;
+    width: 100%; // Full width
+    height: 100%; // Full height
+    overflow: auto; // Enable scroll if needed
+    background-color: rgba(0, 0, 0, 0.9); // Black w/ opacity
+    transition: display 0.3s ease-in-out; // Smooth transition (though display might not transition well)
+
+    &.show {
+        display: block; // Show when class 'show' is added
+    }
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+// Navigation Arrows Styles
+.lightbox-prev,
+.lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; // Adjust vertical position
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.3); // Semi-transparent background
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.6); // Darker on hover
+    }
+}
+
+.lightbox-prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.lightbox-next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+// Adjustments for smaller screens
+@media (max-width: 700px) {
+    .lightbox-content {
+        width: 95%;
     }
 }
